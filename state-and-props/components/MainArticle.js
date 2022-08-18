@@ -1,6 +1,18 @@
-import React from "react";
+import { useState } from "react";
+import { leagueChampions } from "../data/champions";
 
 const MainArticle = ({ title }) => {
+  const numberOfCharacters = leagueChampions.length;
+  let championSelection = "";
+
+  const getRandomNumber = () => {
+    return Math.floor(Math.random() * numberOfCharacters);
+  };
+  const handleClick = () => {
+    championSelection = leagueChampions[getRandomNumber()].name;
+    console.log(championSelection);
+  };
+
   return (
     <>
       <style jsx>
@@ -29,6 +41,14 @@ const MainArticle = ({ title }) => {
         `}
       </style>
       <h1 className="title">{title}</h1>
+      {championSelection}
+      <button
+        type="button"
+        onClick={handleClick}
+        className="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm mt-4 px-5 py-2.5 mr-2 mb-2"
+      >
+        Get Your Champion!
+      </button>
     </>
   );
 };

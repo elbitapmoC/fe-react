@@ -1,5 +1,3 @@
-import React from "react";
-
 const Pagination = () => {
   const handleClick = (e, dir) => {
     console.log(e.target);
