@@ -15,7 +15,8 @@ const MainArticle = ({ title }) => {
 
   return (
     <>
-      <h1 className="title">{title}</h1>
+      <h1 className="title text-4xl">{title}</h1>
+      <aside>Passing Props, useState &amp; Reactive Data</aside>
       <p className="mt-4 mb-4 text-2xl italic">{champion}</p>
       <button
         type="button"

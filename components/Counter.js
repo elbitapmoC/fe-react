@@ -1,16 +1,15 @@
 import { useState } from "react";
 
-const Counter = ({ title }) => {
-  const [number, setNumber] = useState(1);
-
+const Counter = ({ title, count, setCount }) => {
   const handleClick = () => {
-    setNumber = number++;
+    setCount(count + 1);
   };
 
   return (
     <>
-      <h1 className="title">{title}</h1>
-      <p className="mt-4 mb-4 text-2xl italic">{number}</p>
+      <h1 className="title text-4xl">{title}</h1>
+      <aside>Reactive Data (Passing to child)</aside>
+      <p className="mt-4 mb-4 text-2xl italic">{count}</p>
       <button
         type="button"
         onClick={handleClick}
